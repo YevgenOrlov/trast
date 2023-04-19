@@ -1,6 +1,11 @@
+.postBlock {
+  padding: 10px;
+}
 
+.post{
+margin-top: 10px;
 
-
+}
 .item {
     
     color: rgb(16, 175, 24);

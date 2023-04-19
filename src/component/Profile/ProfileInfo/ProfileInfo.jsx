@@ -7,7 +7,7 @@ const ProfileInfo = () => {
       <div>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7yn8kq_YVzTYhemWw3Q3coPHgqHyfZRnP7w&usqp=CAU" />
       </div>
-      <div className="descriptionBlock">ava+description</div>
+      <div className={s.descriptionBlock}>ava+description</div>
     </div>
   );
 };

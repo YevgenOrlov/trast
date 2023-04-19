@@ -9,9 +9,11 @@ const Post = (props) => {
           <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiQ5niRmkko664u4ktvSMY5g24WehbuTE6ncI2CpbxiOwBWEwOp3po8Tis1UZhAzNccE0&usqp=CAU'/>
           {props.message}
           Post1
-          <div><span>like</span>
-          <span>like</span></div>
+          <div>
+            <span>like</span>
+            <span>like</span>
           </div>
+        </div>
         
     
   );
