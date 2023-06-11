@@ -3,16 +3,15 @@ import MyPost from "./MyPost/MyPosts";
 import s from "./Profile.module.css";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Profile = () => {
+const Profile = (props) => {
+
+ 
+
+
   return (
     <div>
       <ProfileInfo/>
-      <div>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7yn8kq_YVzTYhemWw3Q3coPHgqHyfZRnP7w&usqp=CAU" />
-      </div>
-      <div>ava+description</div>
-
-      <MyPost/>
+      <MyPost  posts={props.posts}/>
     </div>
   );
 };
