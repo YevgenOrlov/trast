@@ -4,14 +4,8 @@ import Post from "./Post/Post";
 
 
 
-
-
-
-
-
-
 const MyPost = (props) => {
- 
+
 
   let postElements= props.posts.map(p=><Post message={p.message} likesCount={p.likesCount}/>)
 
@@ -32,7 +26,7 @@ const MyPost = (props) => {
 
 export default MyPost;
 
-{
+
   /* // const Header = () => {
 //     return (
 //       <header className={s.header}>
@@ -41,4 +35,4 @@ export default MyPost;
 //     );
 //   };
 //   export default Header; */
-}
+

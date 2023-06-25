@@ -3,18 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-let posts = [
-    {id:1, message: "Hi, how are you?", likesCount: 12},
-     {id:2, message: "Its my first , how bare you?", likesCount: 14},
-     {id:3, message: "Hi, how are you?", likesCount: 12},
-    {id:4, message: "Its my first , how bare you?", likesCount: 14},]
-
+import state  from './redux/state';
+  
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-    <App posts={posts}/>
+    <App state = {state} />
  
 );
 
