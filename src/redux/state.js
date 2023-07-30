@@ -29,7 +29,7 @@ import { rerenderEntireTree } from "../render";
                 {id:3, message: "Hi, how are you?", likesCount: 12},
                 {id:4, message: "Its my first , how bare you?", likesCount: 14}
                     ],
-       newPostText :  "kamas"
+       newPostText :'kamas'
 
                   }
             }
@@ -37,14 +37,14 @@ import { rerenderEntireTree } from "../render";
             window.state = state;
 
  export let addPost = () => {
-    let newPost = {id: 5, message : state.profilePage.newPostText,   likesCount: 0 };
+    let newPost = {id: 5, message : state.profilePage.newPostText, 
+                    likesCount: 0 };
    state.profilePage.posts.push(newPost);
    state.profilePage.newPostText = '';
    rerenderEntireTree(state);
 }
                    
-export let updateNewPostText = (newText) => {
-   
+ export let updateNewPostText = (newText) => {   
   state.profilePage.newPostText= newText;
   rerenderEntireTree(state);
 }
