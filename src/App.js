@@ -4,9 +4,9 @@ import Header from "./component/Header/Header";
 import Navbar from "./component/Navbar/Navbar";
 import Profile from "./component/Profile/Profile";
 import Dialogs from "./component/Dialogs/Dialogs";
+import {updateNewPostText} from "./redux/state";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { updateNewPostText } from "./redux/state";
 
 const App = (props) => {
 
@@ -23,7 +23,7 @@ const App = (props) => {
           <Route path="/profile/" element= {<Profile profilePage = {props.state.profilePage}  
                                                      addPost = {props.addPost}
                                                      updateNewPostText={props.updateNewPostText} />}  />
-          debuger;
+         
           </Routes>
         </div>
       </div>
