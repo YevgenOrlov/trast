@@ -4,43 +4,36 @@ import Post from "./Post/Post";
 
 
 
+
 const MyPost = (props) => {
 
+  debugger;
 
-  let postElements= props.posts.map(p=><Post message={p.message} likesCount={p.likesCount}/>)
+  let postElements= props.state.posts.map(p=><Post message={p.message} likesCount={p.likesCount}/>)
 
   let newPostElement = React.createRef();
 
-  let addPost = () => {
-    props.addPost();
-    
-  }
-
-  let onPostChange = () => {        //присваивает значение из textarea 
+  let addPost = ()=> {
     let text = newPostElement.current.value;
-    props.updateNewPostText(text);
+    alert(text);
   }
 
   return (
-    <div className={s.pos0tBlock}>
+    <div className={s.postBlock}>
       <h3>My post</h3>
       <div>
-        <div> <textarea onChange={ onPostChange } //при изменинии вызов onPostChange//
-                        ref={newPostElement} 
-                        value={props.newPostText}/></div>
+        <div> <textarea ref={newPostElement}></textarea></div>
         <div>
-        <button onClick = { addPost }>AddPost</button></div>
+        <button onClick = {addPost}>AddPost</button></div>
       </div>
       <div className={s.posts}>
       {postElements}
+
       </div>
     </div>
   );
 };
-
 export default MyPost;
-
-
   /* // const Header = () => {
 //     return (
 //       <header className={s.header}>
@@ -49,4 +42,3 @@ export default MyPost;
 //     );
 //   };
 //   export default Header; */
-
