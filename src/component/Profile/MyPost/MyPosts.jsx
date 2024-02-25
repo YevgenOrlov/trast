@@ -7,7 +7,7 @@ import Post from "./Post/Post";
 
 const MyPost = (props) => {
 
-  debugger;
+
 
   let postElements= props.posts.map(p=><Post message={p.message} likesCount={p.likesCount}/>)
 
