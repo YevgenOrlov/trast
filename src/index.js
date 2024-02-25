@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import state  from './redux/state';
 import {addPost} from './redux/state';
 
-addPost('dfredfre');
+//addPost('dfredfre');
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

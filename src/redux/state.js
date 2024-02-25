@@ -20,7 +20,7 @@ let state = {
                   ]       
                },
               
- profilePage : {
+   profilePage : {
     posts: [
              {id:1, message: "Hi, how are you?", likesCount: 12},
              {id:2, message: "Its my first , how bare you?", likesCount: 14},
@@ -31,6 +31,7 @@ let state = {
          }
 
 export let addPost = (postMessage) => {
+
  let newPost = {id:5, message: postMessage,likesCount: 0
    };
 state.profilePage.posts.push(newPost);

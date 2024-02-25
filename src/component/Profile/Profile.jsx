@@ -16,7 +16,9 @@ const Profile = (props) => {
       <MyPost  posts = {props.state.posts}
                newPost={props.state.newPost}
               //  updateNewPostText={props.updateNewPostText}ss
-               addPost = {props.addPost}    />
+               addPost = {props.addPost}
+               rerenderEntireTree={props.rerenderEntireTree}
+                   />
     </div>
   );
 };
