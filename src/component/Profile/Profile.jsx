@@ -17,7 +17,7 @@ const Profile = (props) => {
                newPost={props.state.newPost}
               //  updateNewPostText={props.updateNewPostText}ss
                addPost = {props.addPost}
-               rerenderEntireTree={props.rerenderEntireTree}
+           
                    />
     </div>
   );

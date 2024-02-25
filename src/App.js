@@ -9,21 +9,24 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 
 const App = (props) => {
+  debugger;
   return (
     <BrowserRouter>
-      <div className="app-wrapper">
-        <Header />
-        <Navbar />
-        <div className="app-wrapper-content">
-          <Routes>
-          <Route  path="/dialogs/"  element= { <Dialogs state = {props.state.dialogsPage}/>}/>
+    <div className="app-wrapper">
+    <Header />
+    <Navbar />
+    <div className="app-wrapper-content">
+      <Routes>
+      <Route  path="/dialogs/"  element= { <Dialogs state = {props.state.dialogsPage}/>}/>
 
-          <Route path="/profile/"   element= {<Profile state = {props.state.profilePage}  />}/>
-          </Routes>
-  
-        </div>
-      </div>
-    </BrowserRouter>
+      <Route path="/profile/"   element= {<Profile state = {props.state.profilePage} addPost={props.addPost} />}/>
+      </Routes>
+
+    </div>
+  </div>
+  </BrowserRouter>
+      
+
   );
 };
 //
