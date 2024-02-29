@@ -28,16 +28,20 @@ let state = {
              {id:2, message: "Its my first , how bare you?", likesCount: 14},
              {id:3, message: "Hi, how are you?", likesCount: 12},
              {id:4, message: "Its my first , how bare you?", likesCount: 14}
-                 ]
+                 ],
+                 newPostText: 'tttttttttttttt'
                }
          }
 
 export let addPost = (postMessage) => {
 
- let newPost = {id:5, message: postMessage,likesCount: 0
+ let newPost = {
+  id:5, 
+  message: postMessage,
+  likesCount: 0
    };
 state.profilePage.posts.push(newPost);
-rerenderEntireTree();
+  rerenderEntireTree();
 }
 
 
