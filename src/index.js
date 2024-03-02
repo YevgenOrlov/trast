@@ -8,7 +8,7 @@ import {rerenderEntireTree} from './render';
 
 //addPost('dfredfre');
 
-rerenderEntireTree()
+rerenderEntireTree(state)
  
 
 // If you want to start measuring performance in your app, pass a function
