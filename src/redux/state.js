@@ -1,4 +1,8 @@
-import {rerenderEntireTree} from './../render'
+let rerenderEntireTree = () =>{
+   console.log(  'state ch');
+}
+
+
 
 let state = {  
 
@@ -32,6 +36,10 @@ let state = {
                  newPostText: 'tttttttttttttt'
                }
          }
+
+
+         window.state = state;
+
 
      export let addPost = () => {
         let newPost = {
