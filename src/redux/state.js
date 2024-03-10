@@ -6,7 +6,6 @@ let rerenderEntireTree = () =>{
 
 let state = {  
 
-
    dialogsPage : {        
     dialogs : [
                   {id:1, name: "Dimych1"},
@@ -37,25 +36,26 @@ let state = {
                }
          }
 
-
          window.state = state;
 
-
-     export let addPost = () => {
+     export const addPost = () => {
         let newPost = {
           id:5, 
           message: state.profilePage.newPostText,
           likesCount: 0
                       };
-    state.profilePage.posts.push(newPost);
-    state.profilePage.newPostText='';
+     state.profilePage.posts.push(newPost);
+     state.profilePage.newPostText='';
      rerenderEntireTree(state);
-}
+                                  }
 
-      export let updateNewPostText = (newText) => {
-  
-    state.profilePage.newPostText=newText;
+     export const updateNewPostText = (newText) => {
+      state.profilePage.newPostText=newText;
      rerenderEntireTree(state);
-}
+                                                   }
+     export const subscriber = (observer) =>{
+      rerenderEntireTree = observer;
+     }
+
 
   export default state;
