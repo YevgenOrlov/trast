@@ -1,61 +1,71 @@
-let rerenderEntireTree = () =>{
-   console.log(  'state ch');
-}
+
+let store = {
+  _state: {
+
+  dialogsPage : {        
+   dialogs : [
+                 {id:1, name: "Dimych1"},
+                 {id:2, name: "Dimych2"},
+                 {id:3, name: "Dimych3"},
+                 {id:4, name: "Dimych4"},
+                 {id:5, name: "Dimych5"},
+                 {id:6, name: "Dimych6"}
+                ],
+  messages : [
+       {id:1, message: "hi"},
+       {id:2, message: "How is you"},
+       {id:3, message: "ebdd"},
+       {id:4, message: "ebdd"},
+       {id:5, message: "ebdd"},
+       {id:6, message: "ebdd"}
+                 ]       
+              },
+             
+  profilePage : {
+   posts: [
+            {id:1, message: "Hi, how are you?", likesCount: 12},
+            {id:2, message: "Its my first , how bare you?", likesCount: 14},
+            {id:3, message: "Hi, how are you?", likesCount: 12},
+            {id:4, message: "Its my first , how bare you?", likesCount: 14}
+                ],
+                newPostText: 'tttttttttttttt'
+              }
+             },
+             getState() {
+               return this._state
+             },
+    _rerenderEntireTree () {
+               console.log(  'state ch');
+            },
+    addPost ()  {
+               let newPost = {
+                 id:5, 
+                 message: this._state.profilePage.newPostText,
+                 likesCount: 0
+                             };
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostText='';
+            this._rerenderEntireTree(this._state);
+            },
+    updateNewPostText (newText)  {
+      this._state.profilePage.newPostText=newText;
+      this._rerenderEntireTree(this._state);
+            },
+    subscriber (observer) {
+      this._rerenderEntireTree = observer;
+            }
 
 
 
-let state = {  
 
-   dialogsPage : {        
-    dialogs : [
-                  {id:1, name: "Dimych1"},
-                  {id:2, name: "Dimych2"},
-                  {id:3, name: "Dimych3"},
-                  {id:4, name: "Dimych4"},
-                  {id:5, name: "Dimych5"},
-                  {id:6, name: "Dimych6"}
-                 ],
-   messages : [
-        {id:1, message: "hi"},
-        {id:2, message: "How is you"},
-        {id:3, message: "ebdd"},
-        {id:4, message: "ebdd"},
-        {id:5, message: "ebdd"},
-        {id:6, message: "ebdd"}
-                  ]       
-               },
-              
-   profilePage : {
-    posts: [
-             {id:1, message: "Hi, how are you?", likesCount: 12},
-             {id:2, message: "Its my first , how bare you?", likesCount: 14},
-             {id:3, message: "Hi, how are you?", likesCount: 12},
-             {id:4, message: "Its my first , how bare you?", likesCount: 14}
-                 ],
-                 newPostText: 'tttttttttttttt'
-               }
-         }
+         
 
-         window.state = state;
+    
 
-     export const addPost = () => {
-        let newPost = {
-          id:5, 
-          message: state.profilePage.newPostText,
-          likesCount: 0
-                      };
-     state.profilePage.posts.push(newPost);
-     state.profilePage.newPostText='';
-     rerenderEntireTree(state);
-                                  }
+    
+        }
+    
+     
 
-     export const updateNewPostText = (newText) => {
-      state.profilePage.newPostText=newText;
-     rerenderEntireTree(state);
-                                                   }
-     export const subscriber = (observer) =>{
-      rerenderEntireTree = observer;
-     }
-
-
-  export default state;
+  export default store;
+  window.store = store;
