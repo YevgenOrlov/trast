@@ -31,10 +31,10 @@ let store = {
                 newPostText: 'tttttttttttttt'
               }
              },
-             getState() {
+    getState() {
                return this._state
              },
-    _rerenderEntireTree () {
+    _callSubsriber () {
                console.log(  'state ch');
             },
     addPost ()  {
@@ -45,14 +45,14 @@ let store = {
                              };
             this._state.profilePage.posts.push(newPost);
             this._state.profilePage.newPostText='';
-            this._rerenderEntireTree(this._state);
+            this._callSubsriber(this._state);
             },
     updateNewPostText (newText)  {
       this._state.profilePage.newPostText=newText;
-      this._rerenderEntireTree(this._state);
+      this._callSubsriber(this._state);
             },
     subscriber (observer) {
-      this._rerenderEntireTree = observer;
+      this._callSubsriber = observer;
             }
 
 
