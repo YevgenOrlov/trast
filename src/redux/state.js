@@ -1,8 +1,6 @@
 
 let store = {
-  _state: {
-
-  dialogsPage : {        
+   _state: {  dialogsPage : {        
    dialogs : [
                  {id:1, name: "Dimych1"},
                  {id:2, name: "Dimych2"},
@@ -31,12 +29,19 @@ let store = {
                 newPostText: 'tttttttttttttt'
               }
              },
+   _callSubsriber () {
+               console.log(  'state ch');
+            },
+
+
+
+   subscriber (observer) { this._callSubsriber = observer; },
     getState() {
                return this._state
              },
-    _callSubsriber () {
-               console.log(  'state ch');
-            },
+
+
+    
     addPost ()  {
                let newPost = {
                  id:5, 
@@ -51,10 +56,23 @@ let store = {
       this._state.profilePage.newPostText=newText;
       this._callSubsriber(this._state);
             },
-    subscriber (observer) {
-      this._callSubsriber = observer;
+    dispatch(action) {  
+        if (action.type ==='ADD-POST') {
+            let newPost = {
+                id:5, 
+                message: this._state.profilePage.newPostText,
+                likesCount: 0
+              };
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostText='';
+            this._callSubsriber(this._state);}
+        else if (action.type === 'APDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubsriber(this._state);
             }
 
+    }
+    }
 
 
 
@@ -63,7 +81,7 @@ let store = {
     
 
     
-        }
+     
     
      
 
