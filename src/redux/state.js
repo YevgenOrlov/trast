@@ -42,7 +42,7 @@ let store = {
 
 
     
-    addPost ()  {
+  addPost ()  {
                let newPost = {
                  id:5, 
                  message: this._state.profilePage.newPostText,
@@ -51,11 +51,13 @@ let store = {
             this._state.profilePage.posts.push(newPost);
             this._state.profilePage.newPostText='';
             this._callSubsriber(this._state);
-            },
-    updateNewPostText (newText)  {
+           },
+   updateNewPostText (newText)  {
       this._state.profilePage.newPostText=newText;
       this._callSubsriber(this._state);
-            },
+           },
+
+
     dispatch(action) {  
         if (action.type ==='ADD-POST') {
             let newPost = {
