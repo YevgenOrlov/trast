@@ -68,7 +68,7 @@ let store = {
             this._state.profilePage.posts.push(newPost);
             this._state.profilePage.newPostText='';
             this._callSubsriber(this._state);}
-        else if (action.type === 'APDATE-NEW-POST-TEXT') {
+        else if (action.type === 'UPDATE-NEW-POST-TEXT') {
             this._state.profilePage.newPostText = action.newText;
             this._callSubsriber(this._state);
             }
