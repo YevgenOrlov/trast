@@ -32,30 +32,13 @@ let store = {
    _callSubsriber () {
                console.log(  'state ch');
             },
-
-
-
    subscriber (observer) { this._callSubsriber = observer; },
     getState() {
                return this._state
              },
-
-
     
-  addPost ()  {
-               let newPost = {
-                 id:5, 
-                 message: this._state.profilePage.newPostText,
-                 likesCount: 0
-                             };
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText='';
-            this._callSubsriber(this._state);
-           },
-   updateNewPostText (newText)  {
-      this._state.profilePage.newPostText=newText;
-      this._callSubsriber(this._state);
-           },
+  
+   
 
 
     dispatch(action) {  
