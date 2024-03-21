@@ -18,7 +18,12 @@ let messagesElements = props.state.messages.map(m => <Message message={m.message
             {dialogsElements}
        </div>
        <div className={s.messages}>
-            {messagesElements}        
+       <div>    {messagesElements}    </div> 
+       <div>        
+          <div><textarea placeholder="Enter your message"></textarea>
+          <div><button onClick = { ()=> {alert('grgahs');}}>Send</button></div>
+        </div>
+        </div>      
       </div>  
     </div>
 
