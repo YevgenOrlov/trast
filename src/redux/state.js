@@ -77,7 +77,7 @@ let store = {
    export const  updateNewPostTextActionCreator = (text)  => ({type:UPDATE_NEW_POST_TEXT, newText: text})
    
    export  const sendMessageCreator = ()=>({ type :SEND_MESSAGE })
-   export const  updateNewMessageCreator = (body)  => ({type:UPDATE_NEW_MESSAGE_BODY, body: body})
+   export const  updateNewMessageBodyCreator = (body)  => ({type:UPDATE_NEW_MESSAGE_BODY, body: body})
    
 
          
