@@ -12,9 +12,11 @@ let state = props.store.getState().dialogsPage
 let dialogsElements = state.dialogs.map (d => <DialogItem name={d.name} id={d.id} key={d.id}/>)
 let messagesElements = state.messages.map(m => <Message message={m.message} id={m.id} key={m.id}/>)
 let newMessagesBody = state.newMessagesBody
+
 let onSendMessageClick = () => {
   props.store.dispatch(sendMessageCreator());
 }
+
 let onNewMessageChange = (e) => {
     let body =  e.target.value;
      props.store.dispatch(updateNewMessageBodyCreator(body));

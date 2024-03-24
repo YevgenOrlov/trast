@@ -1,7 +1,7 @@
 const ADD_POST= 'ADD-POST';
 const UPDATE_NEW_POST_TEXT  = 'UPDATE-NEW-POST-TEXT';
 
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MASSAGE_BODY';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
 const SEND_MESSAGE = 'SEND_MESSAGE';
 
 
@@ -17,15 +17,15 @@ let store = {
                  {id:5, name: "Dimych5"},
                  {id:6, name: "Dimych6"}
                 ],
-  messages : [
-       {id:1, message: "hi"},
-       {id:2, message: "How is you"},
-       {id:3, message: "ebdd"},
-       {id:4, message: "ebdd"},
-       {id:5, message: "ebdd"},
-       {id:6, message: "ebdd"}
-                 ] ,
-                 newMessageBody: ""     
+   messages : [
+                {id:1, message: "hi"},
+                {id:2, message: "How is you"},
+                {id:3, message: "ebdd"},
+                {id:4, message: "ebdd"},
+                {id:5, message: "ebdd"},
+                {id:6, message: "ebdd"}
+            ] ,
+                 newMessagesBody: ""     
               },
              
              
@@ -62,12 +62,12 @@ let store = {
             this._callSubsriber(this._state);
             }
         else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-          this._state.dialogsPage.newMessageBody = action.body;
+          this._state.dialogsPage.newMessagesBody = action.body;
           this._callSubsriber(this._state);
           }
         else if (action.type === SEND_MESSAGE) {
-          let body = this._state.dialogsPage.newMessageBody = action.body;
-          this._state.dialogsPage.newMessageBody = '';
+          let body = this._state.dialogsPage.newMessagesBody = action.body;
+          this._state.dialogsPage.newMessagesBody = '';
           this._state.dialogsPage.messages.push({id:6, message: body});
           this._callSubsriber(this._state);
             }
